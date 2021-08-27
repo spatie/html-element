@@ -2,6 +2,7 @@
 
 namespace Spatie\HtmlElement\Test;
 
+use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use PHPUnit\Framework\TestCase;
 use Spatie\HtmlElement\Attributes;
 
@@ -22,7 +23,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['class' => 'foo bar'],
             $attributes->addClass('foo bar')->toArray()
         );
@@ -33,7 +34,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['class' => 'foo bar'],
             $attributes->addClass(['foo', 'bar'])->toArray()
         );
@@ -44,7 +45,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['href' => '#'],
             $attributes->setAttribute('href', '#')->toArray()
         );
@@ -55,7 +56,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['class' => 'container'],
             $attributes->setAttribute('class', 'container')->toArray()
         );
@@ -66,7 +67,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['required' => null],
             $attributes->setAttribute('required')->toArray()
         );
@@ -77,7 +78,7 @@ class AttributesTest extends TestCase
     {
         $attributes = new Attributes();
 
-        $this->assertArraySubset(
+        Assert::assertArraySubset(
             ['name' => 'email', 'required' => null],
             $attributes->setAttributes(['name' => 'email', 'required'])->toArray()
         );
