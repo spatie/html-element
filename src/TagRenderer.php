@@ -13,7 +13,7 @@ class TagRenderer
     /** @var string */
     protected $contents;
 
-    public static function render(string $element, Attributes $attributes, string $contents) : string
+    public static function render(string $element, Attributes $attributes, string $contents): string
     {
         return (new static($element, $attributes, $contents))->renderTag();
     }
@@ -25,7 +25,7 @@ class TagRenderer
         $this->contents = $contents;
     }
 
-    protected function renderTag() : string
+    protected function renderTag(): string
     {
         if ($this->isSelfClosingTag()) {
             return $this->renderOpeningTag();
@@ -34,19 +34,19 @@ class TagRenderer
         return "{$this->renderOpeningTag()}{$this->contents}{$this->renderClosingTag()}";
     }
 
-    protected function renderOpeningTag() : string
+    protected function renderOpeningTag(): string
     {
         return $this->attributes->isEmpty() ?
             "<{$this->element}>" :
             "<{$this->element} {$this->attributes}>";
     }
 
-    protected function renderClosingTag() : string
+    protected function renderClosingTag(): string
     {
         return "</{$this->element}>";
     }
 
-    protected function isSelfClosingTag() : bool
+    protected function isSelfClosingTag(): bool
     {
         return in_array(strtolower($this->element), [
             'area', 'base', 'br', 'col', 'embed', 'hr',

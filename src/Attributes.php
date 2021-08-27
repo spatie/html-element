@@ -23,9 +23,9 @@ class Attributes
     public function setAttributes(array $attributes)
     {
         foreach ($attributes as $attribute => $value) {
-
             if ($attribute === 'class') {
                 $this->addClass($value);
+
                 continue;
             }
 
@@ -66,7 +66,7 @@ class Attributes
      */
     public function addClass($class)
     {
-        if (!is_array($class)) {
+        if (! is_array($class)) {
             $class = [$class];
         }
 
@@ -77,12 +77,12 @@ class Attributes
         return $this;
     }
 
-    public function isEmpty() : bool
+    public function isEmpty(): bool
     {
         return empty($this->attributes) && empty($this->classes);
     }
 
-    public function toArray() : array
+    public function toArray(): array
     {
         if (empty($this->classes)) {
             return $this->attributes;
@@ -91,7 +91,7 @@ class Attributes
         return array_merge($this->attributes, ['class' => implode(' ', $this->classes)]);
     }
 
-    public function toString() : string
+    public function toString(): string
     {
         if ($this->isEmpty()) {
             return '';
@@ -102,6 +102,7 @@ class Attributes
         foreach ($this->toArray() as $attribute => $value) {
             if (is_null($value) || $value === '') {
                 $attributeStrings[] = $attribute;
+
                 continue;
             }
             $value = htmlspecialchars($value, ENT_COMPAT);
@@ -112,7 +113,7 @@ class Attributes
         return implode(' ', $attributeStrings);
     }
 
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->toString();
     }

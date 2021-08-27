@@ -15,7 +15,7 @@ class AbbreviationParser
     /** @var array */
     protected $attributes = [];
 
-    public static function parse(string $tag) : array
+    public static function parse(string $tag): array
     {
         $parsed = (new static($tag));
 
@@ -34,19 +34,22 @@ class AbbreviationParser
     protected function parseTag(string $tag)
     {
         foreach ($this->explodeTag($tag) as $part) {
-
             switch ($part[0] ?? '') {
                 case '.':
                     $this->parseClass($part);
+
                     break;
                 case '#':
                     $this->parseId($part);
+
                     break;
                 case '[':
                     $this->parseAttribute($part);
+
                     break;
                 default:
                     $this->parseElement($part);
+
                     break;
             }
         }
@@ -68,7 +71,7 @@ class AbbreviationParser
 
         $key = $keyValueSet[0];
         $value = $keyValueSet[1] ?? null;
-        
+
         $this->attributes[$key] = trim($value, '\'"');
     }
 
@@ -77,14 +80,13 @@ class AbbreviationParser
         $this->element = $element;
     }
 
-    protected function explodeTag(string $tag) : array
+    protected function explodeTag(string $tag): array
     {
         // First split out the attributes set with `[...=...]`
         $parts = preg_split('/(?=( \[[^]]+] ))/x', $tag);
 
         // Afterwards we can extract the rest of the attributes
         return Arr::flatMap($parts, function ($part) {
-
             if (strpos($part, '[') === 0) {
                 list($attributeValue, $rest) = explode(']', $part, 2);
 

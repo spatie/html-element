@@ -30,7 +30,7 @@ class HtmlElement
      *
      * @return string
      */
-    public static function render(string $tag, $attributes = null, $contents = null) : string
+    public static function render(string $tag, $attributes = null, $contents = null): string
     {
         return (new static($tag, $attributes, $contents))->renderTag();
     }
@@ -83,7 +83,7 @@ class HtmlElement
         $this->attributes->setAttributes($attributes);
     }
 
-    protected function renderTag() : string
+    protected function renderTag(): string
     {
         return TagRenderer::render($this->element, $this->attributes, $this->contents);
     }
