@@ -1,10 +1,8 @@
 # HtmlElement
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/html-element.svg?style=flat-square)](https://packagist.org/packages/spatie/html-element)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/spatie/html-element/master.svg?style=flat-square)](https://travis-ci.org/spatie/html-element)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/31d646ec-a754-471d-a2fd-1ec31843ba8b.svg?style=flat-square)](https://insight.sensiolabs.com/projects/31d646ec-a754-471d-a2fd-1ec31843ba8b)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/html-element.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/html-element)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/html-element/run-tests?label=tests)](https://github.com/spatie/html-element/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/html-element/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/html-element/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/html-element.svg?style=flat-square)](https://packagist.org/packages/spatie/html-element)
 
 HtmlElement is a library to make dynamic HTML rendering more managable. The syntax is based on [Hyperscript](https://github.com/dominictarr/hyperscript), and adds some [Emmet](http://emmet.io/)-style syntactic sugar too.
