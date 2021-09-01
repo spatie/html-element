@@ -8,7 +8,7 @@ use Spatie\HtmlElement\HtmlElement;
 class HtmlElementTest extends TestCase
 {
     /** @test */
-    function it_parses_a_tag()
+    public function it_parses_a_tag()
     {
         $this->assertEquals(
             '<div></div>',
@@ -17,23 +17,25 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_a_tag_with_text_contents()
+    public function it_parses_a_tag_with_text_contents()
     {
         $this->assertEquals(
             '<div>Hello world</div>',
-            HtmlElement::render('div', 'Hello world'));
+            HtmlElement::render('div', 'Hello world')
+        );
     }
 
     /** @test */
-    function it_parses_a_tag_with_empty_arguments_and_text_contents()
+    public function it_parses_a_tag_with_empty_arguments_and_text_contents()
     {
         $this->assertEquals(
             '<div>Hello world</div>',
-            HtmlElement::render('div', [], 'Hello world'));
+            HtmlElement::render('div', [], 'Hello world')
+        );
     }
 
     /** @test */
-    function it_parses_a_tag_with_a_plain_argument()
+    public function it_parses_a_tag_with_a_plain_argument()
     {
         $this->assertEquals(
             '<div class="intro">Hello world</div>',
@@ -42,7 +44,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_a_tag_with_an_argument_without_a_value()
+    public function it_parses_a_tag_with_an_argument_without_a_value()
     {
         $this->assertEquals(
             '<div contenteditable>Hello world</div>',
@@ -51,7 +53,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_a_tag_with_an_argument_containing_zero()
+    public function it_parses_a_tag_with_an_argument_containing_zero()
     {
         $this->assertEquals(
             '<option value="0">Choose one...</option>',
@@ -60,7 +62,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_an_array_of_content_items()
+    public function it_parses_an_array_of_content_items()
     {
         $this->assertEquals(
             '<ul><li>Cookies</li><li>Cream</li></ul>',
@@ -69,7 +71,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_an_id_passed_in_through_the_tag_name()
+    public function it_parses_an_id_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<div id="container"></div>',
@@ -78,7 +80,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_an_attribute_passed_in_through_the_tag_name()
+    public function it_parses_an_attribute_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<a href="#">Hello world</a>',
@@ -87,7 +89,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_an_attribute_without_value_passed_in_through_the_tag_name()
+    public function it_parses_an_attribute_without_value_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<input required>',
@@ -96,7 +98,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_only_parses_one_id_passed_in_through_the_tag_name()
+    public function it_only_parses_one_id_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<div id="container"></div>',
@@ -105,7 +107,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_a_class_passed_in_through_the_tag_name()
+    public function it_parses_a_class_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<div class="container"></div>',
@@ -114,7 +116,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_parses_multiple_classes_passed_in_through_the_tag_name()
+    public function it_parses_multiple_classes_passed_in_through_the_tag_name()
     {
         $this->assertEquals(
             '<div class="container fluid"></div>',
@@ -123,7 +125,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_merges_classes_passed_in_through_the_tag_name_and_attributes()
+    public function it_merges_classes_passed_in_through_the_tag_name_and_attributes()
     {
         $this->assertEquals(
             '<div class="container fluid"></div>',
@@ -132,7 +134,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_renders_self_closing_tags_when_relevant()
+    public function it_renders_self_closing_tags_when_relevant()
     {
         $this->assertEquals(
             '<img src="/background.jpg">',
@@ -141,7 +143,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_recognizes_uppercase_self_closing_tags()
+    public function it_recognizes_uppercase_self_closing_tags()
     {
         $this->assertEquals(
             '<IMG src="/background.jpg">',
@@ -150,7 +152,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_renders_emmet_style_nested_tags()
+    public function it_renders_emmet_style_nested_tags()
     {
         $this->assertEquals(
             '<div class="container"><div class="row"></div></div>',
@@ -159,7 +161,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_allows_spaces_around_child_separators()
+    public function it_allows_spaces_around_child_separators()
     {
         $this->assertEquals(
             '<div class="container"><div class="row"></div></div>',
@@ -168,7 +170,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_expands_implicit_divs()
+    public function it_expands_implicit_divs()
     {
         $this->assertEquals(
             '<div class="classname"></div>',
@@ -177,7 +179,7 @@ class HtmlElementTest extends TestCase
     }
 
     /** @test */
-    function it_supports_nesteed_implicit_divs()
+    public function it_supports_nesteed_implicit_divs()
     {
         $this->assertEquals(
             '<div class="container"><div class="row"></div></div>',

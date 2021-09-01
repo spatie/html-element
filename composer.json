@@ -16,10 +16,13 @@
         }
     ],
     "require": {
-        "php" : "^7.0"
+        "php" : "^7.3|^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "^9.5",
+        "dms/phpunit-arraysubset-asserts": "^0.3.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "vimeo/psalm": "^4.8"
     },
     "autoload": {
         "psr-4": {

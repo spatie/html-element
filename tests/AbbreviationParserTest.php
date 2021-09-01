@@ -8,7 +8,7 @@ use Spatie\HtmlElement\AbbreviationParser;
 class AbbreviationParserTest extends TestCase
 {
     /** @test */
-    function it_can_parse_a_plain_element()
+    public function it_can_parse_a_plain_element()
     {
         $this->assertEquals(
             ['element' => 'div', 'classes' => [], 'attributes' => []],
@@ -17,7 +17,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_an_element_with_an_id()
+    public function it_can_parse_an_element_with_an_id()
     {
         $this->assertEquals(
             ['element' => 'div', 'classes' => [], 'attributes' => ['id' => 'main']],
@@ -26,7 +26,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_an_element_with_a_class()
+    public function it_can_parse_an_element_with_a_class()
     {
         $this->assertEquals(
             ['element' => 'div', 'classes' => ['container'], 'attributes' => []],
@@ -35,7 +35,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_an_element_with_multiple_classes()
+    public function it_can_parse_an_element_with_multiple_classes()
     {
         $this->assertEquals(
             ['element' => 'div', 'classes' => ['container', 'fluid'], 'attributes' => []],
@@ -44,7 +44,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_an_element_with_an_id_and_a_class()
+    public function it_can_parse_an_element_with_an_id_and_a_class()
     {
         $this->assertEquals(
             ['element' => 'div', 'classes' => ['container'], 'attributes' => ['id' => 'main']],
@@ -53,7 +53,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes()
+    public function it_can_parse_attributes()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => [], 'attributes' => ['href' => '#']],
@@ -62,7 +62,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes_with_single_quotes()
+    public function it_can_parse_attributes_with_single_quotes()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => [], 'attributes' => ['href' => '#']],
@@ -71,7 +71,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes_with_double_quotes()
+    public function it_can_parse_attributes_with_double_quotes()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => [], 'attributes' => ['href' => '#']],
@@ -80,7 +80,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes_without_values()
+    public function it_can_parse_attributes_without_values()
     {
         $this->assertEquals(
             ['element' => 'input', 'classes' => [], 'attributes' => ['required' => null]],
@@ -89,7 +89,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes_and_classes()
+    public function it_can_parse_attributes_and_classes()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => ['foo', 'bar'], 'attributes' => ['href' => '#']],
@@ -98,7 +98,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_multiple_attributes()
+    public function it_can_parse_multiple_attributes()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => [], 'attributes' => ['href' => '#', 'title' => 'Link']],
@@ -107,7 +107,7 @@ class AbbreviationParserTest extends TestCase
     }
 
     /** @test */
-    function it_can_parse_attributes_containing_class_and_id_characters()
+    public function it_can_parse_attributes_containing_class_and_id_characters()
     {
         $this->assertEquals(
             ['element' => 'a', 'classes' => [], 'attributes' => ['href' => 'https://spatie.be/#top']],
