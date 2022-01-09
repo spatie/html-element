@@ -2,6 +2,10 @@
 
 All Notable changes to `spatie/html-element` will be documented in this file
 
+## 1.1.4 - 2022-01-09
+
+- fix release
+
 ## 1.1.3 - 2022-01-09
 
 - Allow PHP 8
