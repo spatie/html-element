@@ -50,7 +50,7 @@ I recommend adding an `el` function to your application to improve readability o
 ```php
 function el(string $tag, $attributes = null, $content = null) : string
 {
-    return \Spatie\HtmlElement\HtmlElement::render(...func_get_args());
+    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $content);
 }
 ```
 
