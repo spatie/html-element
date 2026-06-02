@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/html-element.svg?style=flat-square)](https://packagist.org/packages/spatie/html-element)
 [![Tests](https://github.com/spatie/html-element/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/html-element/actions/workflows/run-tests.yml)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/html-element/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/html-element/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Code Style Action Status](https://github.com/spatie/html-element/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/spatie/html-element/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/html-element.svg?style=flat-square)](https://packagist.org/packages/spatie/html-element)
 
 HtmlElement is a library to make dynamic HTML rendering more managable. The syntax is based on [Hyperscript](https://github.com/dominictarr/hyperscript), and adds some [Emmet](http://emmet.io/)-style syntactic sugar too.
